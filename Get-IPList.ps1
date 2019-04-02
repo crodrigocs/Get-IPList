@@ -16,7 +16,6 @@ function outputColor {
 
     Param ([string]$bgcolor, [string]$fgcolor, [switch]$reset)
 
-
     if ($bgcolor) {
         $host.ui.RawUI.BackgroundColor = $bgcolor
     }
@@ -29,7 +28,6 @@ function outputColor {
         $host.ui.RawUI.BackgroundColor = $bgDefColor
         $host.ui.RawUI.ForegroundColor = $fgDefColor
     }
-
 }
 
 if ($IPv6) {
@@ -47,7 +45,7 @@ if ($OU) {
 
 if ($file) {
     $ComputerName = Get-Content $file
-}    
+}
 
 if ($ComputerName) {
 
@@ -69,7 +67,6 @@ if ($ComputerName) {
         catch {
             outputColor -fgcolor "Yellow"
             Write-Output "Server is not reachable. Error details:"
-            outputColor -reset
             outputColor -fgcolor "DarkGray"
             Write-Output $_`n
             outputColor -reset
