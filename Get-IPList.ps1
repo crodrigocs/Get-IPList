@@ -13,29 +13,29 @@
 
 .TAGS IP, ipconfig
 
-.LICENSEURI https://github.com/crodrigocs/Get-IPList/blob/master/LICENSE    
+.LICENSEURI https://github.com/crodrigocs/Get-IPList/blob/master/LICENSE
 
 .PROJECTURI https://github.com/crodrigocs/Get-IPList
 
-.ICONURI 
+.ICONURI
 
 .EXTERNALMODULEDEPENDENCIES ActiveDirectory
 
-.REQUIREDSCRIPTS 
+.REQUIREDSCRIPTS
 
-.EXTERNALSCRIPTDEPENDENCIES 
+.EXTERNALSCRIPTDEPENDENCIES
 
 .RELEASENOTES Initial release
 
 
 #>
 
-<# 
+<#
 
-.DESCRIPTION 
- List IPs from remote servers 
+.DESCRIPTION
+ List IPs from remote servers
 
-#> 
+#>
 
 param(
     [Parameter()]
