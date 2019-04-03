@@ -9,7 +9,7 @@
 
 .COMPANYNAME rdgo.dev
 
-.COPYRIGHT ©2019 Rodrigo Silva. All rights reserved.
+.COPYRIGHT (c) 2019 Rodrigo Silva. All rights reserved.
 
 .TAGS IP, ipconfig
 
