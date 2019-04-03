@@ -1,3 +1,42 @@
+
+<#PSScriptInfo
+
+.VERSION 1.0
+
+.GUID 2a8e7dbe-40cf-4b37-97d4-d8ef21be3be1
+
+.AUTHOR Rodrigo Silva
+
+.COMPANYNAME rdgo.dev
+
+.COPYRIGHT ©2019 Rodrigo Silva. All rights reserved.
+
+.TAGS IP, ipconfig
+
+.LICENSEURI https://github.com/crodrigocs/Get-IPList/blob/master/LICENSE    
+
+.PROJECTURI https://github.com/crodrigocs/Get-IPList
+
+.ICONURI 
+
+.EXTERNALMODULEDEPENDENCIES 
+
+.REQUIREDSCRIPTS 
+
+.EXTERNALSCRIPTDEPENDENCIES 
+
+.RELEASENOTES Initial release
+
+
+#>
+
+<# 
+
+.DESCRIPTION 
+ List IPs from remote servers 
+
+#> 
+
 param(
     [Parameter()]
     [string[]] $ComputerName,
