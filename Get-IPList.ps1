@@ -33,7 +33,32 @@
 <#
 
 .DESCRIPTION
+ This script runs ipconfig on local and remote computers and outputs the filtered list of IPs for each server.
+.SYNOPSIS
  List IPs from remote servers
+.LINK
+ https://rdgo.dev
+ https://github.com/crodrigocs/Get-IPList
+.PARAMETER ComputerName
+ Specify the computer or computers to be queried, separated by comma.
+.PARAMETER OU
+ Specify the Active Directory OU that contains the servers to be queried.
+.PARAMETER File
+ Specify the text file that contains the servers to be queried.
+.PARAMETER IPv6
+ Switch to IPv6. IPv4 is the default.
+.EXAMPLE
+ .\Get-IPList.ps1
+ This will list all the IPv4 addresses on the localhost.
+.EXAMPLE
+ .\Get-IPList.ps1 -ComputerName server1,server2
+ This will list all the IPv4 addresses for server1 and server2
+.EXAMPLE
+ .\Get-IPList.ps1 -file .\servers.txt
+ This will list all the IPv4 addresses for the servers listed in the servers.txt file. Please note the txt format is 1 server per line.
+.EXAMPLE
+ .\Get-IPList.ps1 -OU "OU=Servers,OU=Corp,DC=contoso,DC=com" -IPv6
+ This will list all the IPv6 addresses for the servers listed in the specified OU.
 
 #>
 
@@ -43,7 +68,7 @@ param(
     [Parameter()]
     [string[]] $OU,
     [Parameter()]
-    [string[]] $file,
+    [string[]] $File,
     [Parameter()]
     [switch] $IPv6
 )
@@ -82,8 +107,8 @@ if ($OU) {
     $ComputerName = Get-ADComputer -SearchBase "$OU" -filter {enabled -eq $True} | Sort-Object -Property Name | Select-Object -ExpandProperty Name
 }
 
-if ($file) {
-    $ComputerName = Get-Content $file
+if ($File) {
+    $ComputerName = Get-Content $File
 }
 
 if ($ComputerName) {
